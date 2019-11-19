@@ -9,7 +9,7 @@ describe('Server Testing', () => {
     server = await API.init()
   })
 
-  after(async () => {
+  after(() => {
     server.stop({ timeout: 2000 }).then((err) => {
       process.exit((err) ? 1 : 0)
     })
@@ -21,13 +21,4 @@ describe('Server Testing', () => {
         assert.deepEqual(resp.res.text, 'Hello World')
       })
   })
-
-  // it('should invalidate if server is not running', () => {
-  //   return server.injectThen({
-  //     method: 'GET',
-  //     url: '/'
-  //   }).then((response) => {
-  //     assert.notEqual(response.statusCode, 400)
-  //   })
-  // })
 })
