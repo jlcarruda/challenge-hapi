@@ -22,8 +22,10 @@ const init = async () => {
     {
       plugin: HapiSwagger,
       options: {
-        title: 'Test Api Documentation',
-        version: '1.0.0'
+        info: {
+          title: 'Test Api Documentation',
+          version: '1.0.0'
+        }
       }
     }
   ]
