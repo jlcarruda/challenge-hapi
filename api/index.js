@@ -13,9 +13,9 @@ const init = async () => {
     host: 'localhost'
   })
 
-  await server.register([
-    blipp,
+  let plugins = [
     laabr,
+    blipp,
     crumb,
     Inert,
     Vision,
@@ -26,11 +26,14 @@ const init = async () => {
         version: '1.0.0'
       }
     }
-  ])
+  ]
+
+  await server.register(plugins)
 
   routes(server)
 
   await server.start()
+  return server
 }
 
 module.exports = { init }

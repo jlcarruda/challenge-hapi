@@ -4,10 +4,10 @@ module.exports = (server) => {
     method: "GET",
     path: "/",
     options: {
-      handler: (request, h) => {
-        return "Hello World"
-      },
       tags: [ 'api' ]
+    },
+    handler: (request, h) => {
+      return "Hello World"
     }
   })
 }
